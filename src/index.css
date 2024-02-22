@@ -1,0 +1,38 @@
+body {
+    font-family: sans-serif;
+    line-height: 1.5;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul,
+ol {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+button {
+    margin: 0;
+    padding: 0;
+
+    cursor: pointer;
+}
