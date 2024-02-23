@@ -1,24 +1,23 @@
-import clsx from "clsx";
 import css from "./Transaction.module.css";
 
 const TransactionHistory = ({ items }) => {
     return (
-        <table className={clsx(css.transactionTable)}>
+        <table className={css.transactionTable}>
             <thead>
                 <tr>
-                    <th className={clsx(css.transactionHeaderItem)}>Type</th>
-                    <th className={clsx(css.transactionHeaderItem)}>Amount</th>
-                    <th className={clsx(css.transactionHeaderItem)}>Currency</th>
+                    <th className={css.transactionHeaderItem}>Type</th>
+                    <th className={css.transactionHeaderItem}>Amount</th>
+                    <th className={css.transactionHeaderItem}>Currency</th>
                 </tr>
             </thead>
 
             <tbody>
                 {items.map(({ id, type, amount, currency }) => {
                     return (
-                        <tr key={id} className={clsx(css.transactionRow)}>
-                            <td className={clsx(css.transactionItem)}>{capitalizeFirstLetter(type)}</td>
-                            <td className={clsx(css.transactionItem)}>{amount}</td>
-                            <td className={clsx(css.transactionItem)}>{currency}</td>
+                        <tr key={id} className={css.transactionRow}>
+                            <td className={css.transactionItem}>{capitalizeFirstLetter(type)}</td>
+                            <td className={css.transactionItem}>{amount}</td>
+                            <td className={css.transactionItem}>{currency}</td>
                         </tr>
                     )
                 })}
@@ -28,11 +27,8 @@ const TransactionHistory = ({ items }) => {
 }
 
 function capitalizeFirstLetter(type) {
-    if (type.charAt(0).toLowerCase() === type.charAt(0)) {
-        return type.charAt(0).toUpperCase() + type.slice(1);
-    } else {
-        return type;
-    }
+    return type[0].toUpperCase() + type.slice(1);
 }
+
 
 export default TransactionHistory
